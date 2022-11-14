@@ -1,0 +1,53 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  aws-sam-template
+
+  Sample SAM Template AwsSamTemplate
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 20
+    Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+      Variables:
+        MY_VARIABLE: EnvVar1
+        MY_COGNITO_USER_POOL_ID: ABC123 
+        MY_COGNITO_CLIENT_APP_SECRET: QWERTY
+
+Resources:
+  AwsSamTemplateFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: AwsSamTemplate
+      Handler: com.izzimovil.template.lambda.TemplateHandler::handleRequest
+      Runtime: java11
+      Architectures:
+        - x86_64
+      MemorySize: 512
+            
+      Events:
+        HelloWorld:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /izzi
+            Method: post
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  AwsSamTemplateApi:
+    Description: "API Gateway endpoint URL for Prod stage for AwsSamTemplate function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/izzi/"
+  AwsSamTemplateFunction:
+    Description: "AwsSamTemplate Lambda Function ARN"
+    Value: !GetAtt AwsSamTemplateFunction.Arn
+  AwsSamTemplateFunctionIamRole:
+    Description: "Implicit IAM Role created for AwsSamTemplate function"
+    Value: !GetAtt AwsSamTemplateFunctionRole.Arn
+    
+    
+    
+    
+    

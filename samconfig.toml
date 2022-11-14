@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "izziLambdaTemplate"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1ai5z8w69ge31"
+s3_prefix = "izziLambdaTemplate"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
+confirm_changeset = true
+disable_rollback = true
