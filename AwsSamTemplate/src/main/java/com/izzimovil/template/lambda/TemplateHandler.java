@@ -29,7 +29,7 @@ public class TemplateHandler implements RequestHandler<Map<String, String>, AdpC
         	 LambdaLogger logger = context.getLogger();
              String myVariable = System.getenv("MY_VARIABLE");
              String cognitoUserPoolId = System.getenv("MY_COGNITO_USER_POOL_ID");
-             logger.log("\n*** Lambda Version: 2022-11-13_v1.0  ");
+             logger.log("\n*** Lambda Version: 2022-11-23_v1.0  on DEV Branch");
              logger.log("\n*** MY_VARIABLE = "+myVariable);
              logger.log("\n*** MY_COGNITO_USER_POOL_ID ***= "+cognitoUserPoolId);
              
