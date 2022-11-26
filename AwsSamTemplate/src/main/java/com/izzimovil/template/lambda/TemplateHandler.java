@@ -48,7 +48,7 @@ public class TemplateHandler implements RequestHandler<Map<String, String>, AdpC
             logger.log("\n*** output > " + output);
             
             response.setErrcode(UUID.randomUUID().toString());
-            response.setErrmsg("SUCCESS");
+            response.setErrmsg("SUCCESS: "+output);
             return response;
             
         } catch (IOException e) {
