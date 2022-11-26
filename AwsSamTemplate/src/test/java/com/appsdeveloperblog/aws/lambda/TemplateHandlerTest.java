@@ -20,7 +20,7 @@ public class TemplateHandlerTest {
     //assertNotNull(content);
 		  
 	AdpCoreResponse response = new AdpCoreResponse();
-	String output = String.format("{ \"message\": \"Test AWS Lambda\", \"location\": \"%s\" }");
+	String output = String.format("{ \"message\": \"Test AWS Lambda\" }");
     System.out.println("\n*** output > " + output);
     
     response.setErrcode(UUID.randomUUID().toString());
