@@ -34,7 +34,7 @@ public class TemplateHandler implements RequestHandler<Map<String, String>, AdpC
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
     	     LocalDateTime now = LocalDateTime.now();  
     	     
-            logger.log("\n*** Lambda Version: "+dtf.format(now)+" v1.0  on DEV Branch");
+            logger.log("\n*** CHEEEEEEMA Lambda Version: "+dtf.format(now)+" v1.0  on DEV Branch");
             logger.log("\n*** MY_VARIABLE VALUE = "+myVariable); 
             logger.log("\n*** MY_COGNITO_USER_POOL_ID ***= "+cognitoUserPoolId);
             
